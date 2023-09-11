@@ -19,7 +19,8 @@ class User extends Model
     protected $fillable = [
         'name',
         'email',
-        'cpf'
+        'cpf',
+        'profile_id',
     ];
 
     public function profile(): HasOne
