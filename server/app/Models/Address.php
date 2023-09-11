@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class User extends Model
+class Address extends Model
 {
     use HasFactory;
 
@@ -17,18 +16,12 @@ class User extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'cpf'
+        'logradouro',
+        'cep',
     ];
 
-    public function profile(): HasOne
+    public function users(): BelongsToMany
     {
-        return $this->hasOne(Profile::class);
-    }
-
-    public function addresses(): BelongsToMany
-    {
-        return $this->belongsToMany(Address::class);
+        return $this->belongsToMany(User::class);
     }
 }
