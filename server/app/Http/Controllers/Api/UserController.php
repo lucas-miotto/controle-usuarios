@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,9 +12,22 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::query()->orderby('created_at', 'DESC')->get();
+        $query = User::query();
+
+        $query->when($request->name, function ($query) use ($request) {
+            $query->where('name', 'LIKE', '%' . $request->name . '%');
+        })->when($request->cpf, function ($query) use ($request) {
+            $query->where('cpf', '=', $request->cpf);
+        })->when($request->date_start, function ($query) use ($request) {
+            $query->where('created_at', '>=', $request->date_start);
+        })->when($request->date_end, function ($query) use ($request) {
+            $query->where('created_at', '<=', $request->date_end);
+        });
+
+        // $users = $query->orderby('created_at', 'DESC')->get();
+        $users = $query->get();
 
         foreach ($users as $user) {
             $profileInfo = Profile::find($user['profile_id']);

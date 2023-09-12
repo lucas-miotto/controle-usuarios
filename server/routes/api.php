@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AddressController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Api\AddressController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResources([
     'users' => UserController::class,
-]);
-
-Route::apiResources([
     'addresses' => AddressController::class,
 ]);
