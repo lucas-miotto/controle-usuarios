@@ -28,6 +28,12 @@ class User extends Model
         return $this->hasOne(Profile::class);
     }
 
+    // Verificar para adicionar isso, o segundo elemento para demostrar qual seria o id respostavel pelo endereço..
+    // public function profile()
+    // {
+    //     return $this->hasMany(Season::class, 'profile_id');
+    // }
+
     public function addresses(): BelongsToMany
     {
         return $this->belongsToMany(Address::class);
