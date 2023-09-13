@@ -37,8 +37,9 @@ class UserController extends Controller
                 'role' => $profileInfo->role,
             ];
         }
+        $data['users'] = $users;
 
-        return response()->json($users);
+        return response()->json($data, 200);
     }
 
     /**
@@ -60,8 +61,13 @@ class UserController extends Controller
         if (!$user) {
             return response()->json('Usuário não encontrado.', 404);
         }
+        $profiles = Profile::all();
 
-        return response()->json($user);
+        $data = [];
+        $data['user'] = $user;
+        $data['profiles'] = $profiles;
+
+        return response()->json($data, 200);
     }
 
     /**
@@ -76,7 +82,7 @@ class UserController extends Controller
 
         $user->update($request->all());
 
-        return response()->json($user);
+        return response()->json($user, 200);
     }
 
     /**
