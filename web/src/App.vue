@@ -32,9 +32,18 @@ ul,
 li,
 h1,
 h2,
-p {
+p,
+fieldset {
 	padding: 0px;
 	margin: 0px;
+}
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
 ul {
@@ -95,18 +104,20 @@ img {
 
 label {
 	margin-bottom: 5px;
+	width: 100%;
+	display: block;
 }
 
 input,
 textarea {
 	border-radius: 4px;
-	border: 1px solid white;
+	border: 1px solid #87f;
 	padding: 15px;
 	box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
 	transition: all 0.3s;
 	font-size: 1rem;
 	font-family: "Avenir", Helvetica, Arial, sans-serif;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 input:hover,
@@ -115,7 +126,6 @@ textarea:hover,
 textarea:focus {
 	outline: none;
 	box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
-	border-color: #87f;
 }
 
 .v-enter,

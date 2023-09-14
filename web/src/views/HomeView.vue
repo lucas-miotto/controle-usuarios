@@ -1,16 +1,24 @@
 <template>
-	<div class="home"></div>
+	<section>
+		<h1>Controle de Usuários</h1>
+		<UserFilter />
+	</section>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
-// export default {
-//   name: 'HomeView',
-//   components: {
-//     HelloWorld
-//   }
-// }
+import UserFilter from "@/components/UserFilter.vue";
+export default {
+	name: "HomeView",
+	components: {
+		UserFilter,
+	},
+};
 </script>
-<style scoped></style>
+<style scoped>
+h1 {
+	color: #87f;
+	margin-top: 40px;
+	font-size: 2rem;
+	text-align: center;
+}
+</style>
