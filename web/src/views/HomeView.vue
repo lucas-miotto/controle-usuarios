@@ -13,7 +13,9 @@
 				<UserTableContent />
 			</div>
 		</div>
-		<router-link class="btn" to="/">Adicionar novo usuario</router-link>
+		<router-link class="btn" to="/registrar-usuario">
+			Adicionar novo usuario
+		</router-link>
 	</section>
 </template>
 

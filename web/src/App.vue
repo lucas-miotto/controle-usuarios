@@ -170,7 +170,8 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
 	font-family: "Roboto", Arial, sans-serif;
 	border-radius: 4px;
 	border: 1px solid #b1f1ce;
@@ -181,10 +182,15 @@ textarea {
 	margin-bottom: 20px;
 }
 
+select {
+	background: #fff;
+}
+
 input:hover,
 input:focus,
 textarea:hover,
-textarea:focus {
+textarea:focus,
+select:focus {
 	outline: none;
 	box-shadow: 0 6px 12px rgba(2, 89, 41, 0.2);
 	border-color: #039645;
