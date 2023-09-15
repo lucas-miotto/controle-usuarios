@@ -1,12 +1,14 @@
 <template>
 	<header>
 		<nav>
-			<div class="logo">
-				<router-link to="/">Controle Usuários</router-link>
+			<div class="container">
+				<div class="logo">
+					<router-link to="/">Controle Usuários</router-link>
+				</div>
+				<router-link class="btn" to="/registrar-usuario">
+					Novo Usuários
+				</router-link>
 			</div>
-			<router-link class="btn" to="/registrar-usuario">
-				Novo Usuários
-			</router-link>
 		</nav>
 	</header>
 </template>
@@ -19,11 +21,13 @@ export default {
 
 <style scoped>
 nav {
+	padding: 15px 20px;
+	box-shadow: 0 2px 4px rgba(2, 89, 41, 0.1);
+}
+nav .container {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 15px 20px;
-	box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
 }
 
 .logo {

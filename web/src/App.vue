@@ -23,6 +23,10 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@700&family=Roboto:wght@400;700&display=swap");
+
+/* font-family: 'Bai Jamjuree', sans-serif;
+font-family: 'Roboto', sans-serif; */
 * {
 	box-sizing: border-box;
 }
@@ -51,7 +55,10 @@ ul {
 }
 
 body {
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: "Roboto", Arial, sans-serif;
+	font-weight: 400;
 	color: #345;
 	background: url("./assets/pattern.svg") repeat top;
 }
@@ -67,28 +74,66 @@ img {
 }
 
 .container {
-	max-width: 1280px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
+	max-width: 1400px;
+	padding: 0 90px;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+@media (max-width: 1366px) {
+	.container {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.container {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+@media (max-width: 600px) {
+	.container {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+@media (max-width: 450px) {
+	.container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media (max-width: 350px) {
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 
 .btn {
 	display: block;
 	padding: 10px 30px;
-	background: #87f;
+	background: #039645;
 	border-radius: 4px;
 	color: #fff;
 	text-align: center;
 	font-size: 1rem;
-	box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+	box-shadow: 0 2px 4px rgba(2, 89, 41, 0.1);
 	transition: all 0.3s;
 	border: none;
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
+	font-family: "Bai Jamjuree", sans-serif;
 	cursor: pointer;
+	font-weight: 700;
 }
 
 .btn:hover {
-	background: #65d;
+	background: #22c069;
 	transform: scale(1.1);
 }
 
@@ -102,6 +147,22 @@ img {
 	flex: 1;
 }
 
+h1 {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	color: #039645;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.4rem;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-weight: 700;
+}
+
 label {
 	margin-bottom: 5px;
 	width: 100%;
@@ -110,13 +171,13 @@ label {
 
 input,
 textarea {
+	font-family: "Roboto", Arial, sans-serif;
 	border-radius: 4px;
-	border: 1px solid #87f;
+	border: 1px solid #b1f1ce;
 	padding: 15px;
-	box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
+	box-shadow: 0 4px 8px rgba(2, 89, 41, 0.1);
 	transition: all 0.3s;
 	font-size: 1rem;
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
 	margin-bottom: 20px;
 }
 
@@ -125,7 +186,8 @@ input:focus,
 textarea:hover,
 textarea:focus {
 	outline: none;
-	box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
+	box-shadow: 0 6px 12px rgba(2, 89, 41, 0.2);
+	border-color: #039645;
 }
 
 .v-enter,
@@ -144,5 +206,89 @@ textarea:focus {
 .v-enter-active,
 .v-leave-active {
 	transition: all 0.3s;
+}
+
+.table-item {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	border-radius: 4px;
+	padding: 15px;
+	border-bottom: 1px solid #fff;
+}
+
+.table-header {
+	background-color: #1f1f23;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.table-header li {
+	width: 12.5%;
+	font-size: 16px;
+	color: #fff;
+	font-weight: bold;
+}
+.table-content {
+	align-items: center;
+	background-color: #eaeaea;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.table-content-container .table-content:nth-child(2n) {
+	background-color: #f9f9f9;
+}
+.table-content-container .table-content:last-child {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.table-content li {
+	width: 12.5%;
+	font-size: 14px;
+}
+
+.table-content li:nth-child(6),
+.table-header li:nth-child(6),
+.table-content li:first-child,
+.table-header li:first-child {
+	width: 4%;
+}
+
+.table-header li:last-child,
+.table-content li:last-child {
+	width: 25%;
+}
+.table-content li:last-child {
+	display: flex;
+}
+
+.btn-small {
+	padding: 5px 10px;
+	font-size: 14px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.btn-edit {
+	background-color: #764fd0;
+}
+.btn-edit:hover {
+	background-color: #5c3ea3;
+}
+
+.btn-view {
+	background-color: #e8ae3a;
+}
+.btn-view:hover {
+	background-color: #b5882d;
+}
+
+.btn-delete {
+	background-color: #e85435;
+}
+.btn-delete:hover {
+	background-color: #b54129;
 }
 </style>

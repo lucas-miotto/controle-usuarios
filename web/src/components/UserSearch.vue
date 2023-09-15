@@ -1,6 +1,6 @@
 <template>
 	<div class="form-filter">
-		<h2>Formulário para filtro de usuario</h2>
+		<h2>Formulário para filtro de usuários</h2>
 		<form>
 			<fieldset>
 				<label for="name">Nome</label>
@@ -32,13 +32,15 @@
 
 <script>
 export default {
+	name: "UserSearch",
+
 	data() {
 		return {
 			busca: "",
 		};
 	},
 	methods: {
-		// buscarProdutos() {
+		// searchUser() {
 		// 	this.$router.push({ query: { q: this.busca } });
 		// },
 	},
@@ -58,6 +60,7 @@ fieldset {
 	width: 48%;
 	margin-right: 4%;
 }
+
 fieldset:nth-child(2n) {
 	margin-right: 0;
 }
@@ -70,7 +73,8 @@ h2 {
 	margin-top: 40px;
 	margin-bottom: 20px;
 	max-width: 600px;
-	margin: 30px auto;
+	margin: 30px auto 0;
+	display: block;
 }
 
 .btn {

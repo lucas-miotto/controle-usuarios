@@ -1,6 +1,8 @@
 <template>
 	<footer>
-		<p>Projeto Controle Usuários - Lucas Miotto</p>
+		<div class="container">
+			<p>Projeto Controle Usuários - Lucas Miotto</p>
+		</div>
 	</footer>
 </template>
 
@@ -12,7 +14,7 @@ export default {
 
 <style scoped>
 footer {
-	background: #87f;
+	background: #027435;
 	padding: 25px 0;
 	text-align: center;
 	font-size: 1.2rem;
