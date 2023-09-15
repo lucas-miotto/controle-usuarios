@@ -1,23 +1,78 @@
 <template>
-	<ul class="table-content table-item">
-		<li>1</li>
-		<li>1/01/2000</li>
-		<li>Lucas</li>
-		<li>12345667889</li>
-		<li>teste@teste.com</li>
-		<li>ADM</li>
-		<li>
-			<button class="btn btn-small btn-edit">Detalhar</button>
-			<button class="btn btn-small btn-view">Editar</button>
-			<button class="btn btn-small btn-delete">Excluir</button>
-		</li>
-	</ul>
+	<section class="user-list">
+		<transition mode="out-in">
+			<div v-if="users && users.length" class="users" key="users">
+				<ul
+					v-for="user in users"
+					:key="user.id"
+					class="table-content table-item"
+				>
+					<li>{{ user.id }}</li>
+					<li>{{ user.created_at | formatDate }}</li>
+					<li>{{ user.name }}</li>
+					<li>{{ user.cpf | formatCPF }}</li>
+					<li>{{ user.email }}</li>
+					<li>{{ user.profile_id.role }}</li>
+					<li>
+						<button class="btn btn-small btn-edit">Detalhar</button>
+						<button class="btn btn-small btn-view">Editar</button>
+						<button class="btn btn-small btn-delete">Excluir</button>
+					</li>
+				</ul>
+			</div>
+			<div v-else-if="users && users.length === 0" key="no-results">
+				<p class="no-results">
+					Busca sem resultados. Nenhum usuário encontrado.
+				</p>
+			</div>
+			<PageLoading key="carregando" v-else />
+		</transition>
+	</section>
 </template>
 
 <script>
+import { api } from "@/services.js";
+import PageLoading from "./PageLoading.vue";
+import { serialize } from "@/helpers.js";
+
 export default {
 	name: "UserTableContent",
+	components: { PageLoading },
+	data() {
+		return {
+			users: null,
+		};
+	},
+	computed: {
+		url() {
+			const query = serialize(this.$route.query);
+			return `/users?${query}`;
+		},
+	},
+	methods: {
+		getUsers() {
+			this.users = null;
+			api.get(this.url).then((response) => {
+				this.users = response.data.users;
+			});
+		},
+	},
+	watch: {
+		url() {
+			this.getUsers();
+		},
+	},
+	created() {
+		this.getUsers();
+	},
 };
 </script>
 
-<style></style>
+<style>
+.no-results {
+	margin-top: 40px;
+	widows: 100%;
+	text-align: center;
+	font-size: 1.4rem;
+}
+</style>

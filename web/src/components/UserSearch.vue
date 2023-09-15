@@ -4,11 +4,11 @@
 		<form>
 			<fieldset>
 				<label for="name">Nome</label>
-				<input id="name" name="name" type="text" v-model="name" />
+				<input id="name" name="name" type="text" v-model="search.name" />
 			</fieldset>
 			<fieldset>
 				<label for="cpf">CPF</label>
-				<input id="cpf" name="cpf" type="text" v-model="cpf" />
+				<input id="cpf" name="cpf" type="text" v-model="search.cpf" />
 			</fieldset>
 			<fieldset>
 				<label for="date_start">Inicio</label>
@@ -16,15 +16,22 @@
 					id="date_start"
 					name="date_start"
 					type="date"
-					v-model="date_start"
+					v-model="search.date_start"
 				/>
 			</fieldset>
 			<fieldset>
 				<label for="date_end">Fim</label>
-				<input id="date_end" name="date_end" type="date" v-model="date_end" />
+				<input
+					id="date_end"
+					name="date_end"
+					type="date"
+					v-model="search.date_end"
+				/>
 			</fieldset>
 			<div class="button">
-				<button class="btn" @click.prevent="">Filtrar Usuários</button>
+				<button class="btn" @click.prevent="searchUser">
+					Filtrar Usuários
+				</button>
 			</div>
 		</form>
 	</div>
@@ -36,13 +43,22 @@ export default {
 
 	data() {
 		return {
-			busca: "",
+			search: {
+				name: "",
+				cpf: "",
+				date_start: "",
+				date_end: "",
+			},
 		};
 	},
 	methods: {
-		// searchUser() {
-		// 	this.$router.push({ query: { q: this.busca } });
-		// },
+		searchUser() {
+			this.search.cpf = this.search.cpf.replace(/\D/g, "");
+
+			this.$router.push({
+				query: { ...this.search },
+			});
+		},
 	},
 };
 </script>

@@ -6,11 +6,6 @@
 			<UserTableHeader />
 			<div class="table-content-container">
 				<UserTableContent />
-				<UserTableContent />
-				<UserTableContent />
-				<UserTableContent />
-				<UserTableContent />
-				<UserTableContent />
 			</div>
 		</div>
 		<router-link class="btn" to="/registrar-usuario">
@@ -33,6 +28,7 @@ export default {
 	},
 };
 </script>
+
 <style scoped>
 .btn {
 	max-width: 300px;

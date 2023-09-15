@@ -1,8 +1,6 @@
 <template>
 	<section class="meu-cadastro">
-		<router-link class="btn btn-back" to="/registrar-usuario">
-			Voltar
-		</router-link>
+		<router-link class="btn btn-back" to="/"> Voltar </router-link>
 		<h1>Cadastro do Usuário</h1>
 		<UserForm>
 			<button class="btn" @click.prevent="">Atualizar Usuário</button>
