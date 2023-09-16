@@ -76,7 +76,6 @@ export default {
 		getUser() {
 			api.get(`/users/${this.id}`).then((response) => {
 				this.user = response.data.user;
-				document.title = this.user.name;
 			});
 		},
 	},

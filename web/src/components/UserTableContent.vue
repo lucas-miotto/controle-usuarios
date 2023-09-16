@@ -21,7 +21,12 @@
 							Detalhar
 						</router-link>
 						<button class="btn btn-small btn-view">Editar</button>
-						<button class="btn btn-small btn-delete">Excluir</button>
+						<button
+							class="btn btn-small btn-delete"
+							@click="deleteUser(user.id)"
+						>
+							Excluir
+						</button>
 					</li>
 				</ul>
 			</div>
@@ -60,6 +65,16 @@ export default {
 			api.get(this.url).then((response) => {
 				this.users = response.data.users;
 			});
+		},
+
+		deleteUser(id) {
+			const confirm = window.confirm("Deseja remover este usúario?");
+
+			if (confirm) {
+				api.delete(`/users/${id}`).then(() => {
+					this.getUsers();
+				});
+			}
 		},
 	},
 	watch: {
