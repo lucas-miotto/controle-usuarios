@@ -1,5 +1,5 @@
 <template>
-	<section class="meu-cadastro">
+	<section class="user-create">
 		<router-link class="btn btn-back" to="/"> Voltar </router-link>
 		<h1>Cadastro do Usuário</h1>
 		<UserForm>
@@ -21,7 +21,7 @@ export default {
 };
 </script>
 <style scoped>
-.meu-cadastro {
+.user-create {
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 0 20px;

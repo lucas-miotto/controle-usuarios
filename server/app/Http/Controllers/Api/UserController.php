@@ -63,6 +63,14 @@ class UserController extends Controller
         if (!$user) {
             return response()->json('Usuário não encontrado.', 404);
         }
+
+        $profileInfo = Profile::find($user['profile_id']);
+
+        $user['profile_id'] = [
+            'id' => $profileInfo->id,
+            'role' => $profileInfo->role,
+        ];
+
         $profiles = Profile::all();
 
         $data = [];

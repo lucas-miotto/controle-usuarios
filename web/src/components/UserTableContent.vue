@@ -14,7 +14,12 @@
 					<li>{{ user.email }}</li>
 					<li>{{ user.profile_id.role }}</li>
 					<li>
-						<button class="btn btn-small btn-edit">Detalhar</button>
+						<router-link
+							:to="{ name: 'user', params: { id: user.id } }"
+							class="btn btn-small btn-edit"
+						>
+							Detalhar
+						</router-link>
 						<button class="btn btn-small btn-view">Editar</button>
 						<button class="btn btn-small btn-delete">Excluir</button>
 					</li>

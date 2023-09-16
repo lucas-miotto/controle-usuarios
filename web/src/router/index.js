@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CreateUserView from "../views/CreateUserView.vue";
+import UserView from "../views/UserView.vue";
 
 Vue.use(VueRouter);
 
@@ -10,6 +11,12 @@ const routes = [
 		path: "/",
 		name: "home",
 		component: HomeView,
+	},
+	{
+		path: "/usuario/:id",
+		name: "user",
+		component: UserView,
+		props: true,
 	},
 	{
 		path: "/registrar-usuario",

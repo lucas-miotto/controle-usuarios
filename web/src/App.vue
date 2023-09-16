@@ -253,6 +253,9 @@ select:focus {
 .table-content li {
 	width: 12.5%;
 	font-size: 14px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .table-content li:nth-child(6),
