@@ -45,14 +45,6 @@
 						<li>Rua ABC</li>
 						<li>12345678</li>
 					</ul>
-					<ul class="table-content table-item">
-						<li>Rua ABC</li>
-						<li>12345678</li>
-					</ul>
-					<ul class="table-content table-item">
-						<li>Rua ABC</li>
-						<li>12345678</li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -74,9 +66,14 @@ export default {
 	},
 	methods: {
 		getUser() {
-			api.get(`/users/${this.id}`).then((response) => {
-				this.user = response.data.user;
-			});
+			api
+				.get(`/users/${this.id}`)
+				.then((response) => {
+					this.user = response.data.user;
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 		},
 	},
 	created() {
@@ -98,7 +95,6 @@ export default {
 	background: #345;
 }
 .btn:hover {
-	/* background: #22c069; */
 	opacity: 0.8;
 	transform: scale(1.1);
 }

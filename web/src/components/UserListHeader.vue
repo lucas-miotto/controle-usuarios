@@ -12,8 +12,6 @@
 
 <script>
 export default {
-	name: "UserTableHeader",
+	name: "UserListHeader",
 };
 </script>
-
-<style></style>

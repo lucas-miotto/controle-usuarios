@@ -1,4 +1,5 @@
 <template>
+	<!-- Preciso fazer: Revisar depois -->
 	<section class="user-create">
 		<router-link class="btn btn-back" to="/"> Voltar </router-link>
 		<h1>Cadastro do Usuário</h1>
@@ -63,7 +64,6 @@ export default {
 	},
 	methods: {
 		async createUser(event) {
-			console.log(this.user);
 			this.erros = [];
 
 			const button = event.currentTarget;

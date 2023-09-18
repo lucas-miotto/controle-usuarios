@@ -25,8 +25,6 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@700&family=Roboto:wght@400;700&display=swap");
 
-/* font-family: 'Bai Jamjuree', sans-serif;
-font-family: 'Roboto', sans-serif; */
 * {
 	box-sizing: border-box;
 }
@@ -41,6 +39,7 @@ fieldset {
 	padding: 0px;
 	margin: 0px;
 }
+
 fieldset {
 	margin: 0;
 	padding: 0;

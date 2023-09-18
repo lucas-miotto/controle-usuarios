@@ -6,7 +6,7 @@
 					<router-link to="/">Controle Usuários</router-link>
 				</div>
 				<router-link class="btn" to="/registrar-usuario">
-					Novo Usuários
+					Novo Usuário
 				</router-link>
 			</div>
 		</nav>

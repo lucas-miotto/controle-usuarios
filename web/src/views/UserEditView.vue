@@ -1,4 +1,6 @@
 <template>
+	<!-- Depois fazer um form unico e deixar no componentes, e depois carregar tanto pra criar quanto pra atualia. -->
+	<!-- Estou aqui, no mais está funcionando mas preciso aprimorar e verificar a questão do seelct. vou pra o criar agora. -->
 	<section class="user-edit user-form container">
 		<router-link class="btn btn-back" to="/"> Voltar </router-link>
 		<h1>Editar Usuário</h1>
@@ -46,19 +48,13 @@
 				<ul class="table-header table-item">
 					<li>Logradouro</li>
 					<li>CEP</li>
+					<li>Ação</li>
 				</ul>
 				<div class="table-content-container">
 					<ul class="table-content table-item">
 						<li>Rua ABC</li>
 						<li>12345678</li>
-					</ul>
-					<ul class="table-content table-item">
-						<li>Rua ABC</li>
-						<li>12345678</li>
-					</ul>
-					<ul class="table-content table-item">
-						<li>Rua ABC</li>
-						<li>12345678</li>
+						<button class="btn btn-small btn-delete">Excluir</button>
 					</ul>
 				</div>
 			</div>
@@ -81,13 +77,17 @@ export default {
 	},
 	methods: {
 		getUser() {
-			api.get(`/users/${this.id}`).then((response) => {
-				this.user = response.data.user;
-			});
+			api
+				.get(`/users/${this.id}`)
+				.then((response) => {
+					this.user = response.data.user;
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 		},
 
 		async updateUser(event) {
-			console.log(this.user);
 			this.erros = [];
 
 			const button = event.currentTarget;

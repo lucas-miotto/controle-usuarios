@@ -3,9 +3,9 @@
 		<h1>Controle de Usuários</h1>
 		<UserSearch />
 		<div class="user-table">
-			<UserTableHeader />
+			<UserListHeader />
 			<div class="table-content-container">
-				<UserTableContent />
+				<UserListContent />
 			</div>
 		</div>
 		<router-link class="btn" to="/registrar-usuario">
@@ -16,15 +16,15 @@
 
 <script>
 import UserSearch from "@/components/UserSearch.vue";
-import UserTableHeader from "@/components/UserTableHeader.vue";
-import UserTableContent from "@/components/UserTableContent.vue";
+import UserListHeader from "@/components/UserListHeader.vue";
+import UserListContent from "@/components/UserListContent.vue";
 
 export default {
 	name: "HomeView",
 	components: {
 		UserSearch,
-		UserTableHeader,
-		UserTableContent,
+		UserListHeader,
+		UserListContent,
 	},
 };
 </script>

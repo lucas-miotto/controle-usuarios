@@ -51,7 +51,7 @@ import PageLoading from "./PageLoading.vue";
 import { serialize } from "@/helpers.js";
 
 export default {
-	name: "UserTableContent",
+	name: "UserListContent",
 	components: { PageLoading },
 	data() {
 		return {

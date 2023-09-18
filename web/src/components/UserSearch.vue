@@ -40,7 +40,6 @@
 <script>
 export default {
 	name: "UserSearch",
-
 	data() {
 		return {
 			search: {
