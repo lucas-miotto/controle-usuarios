@@ -1,6 +1,4 @@
 <template>
-	<!-- Depois fazer um form unico e deixar no componentes, e depois carregar tanto pra criar quanto pra atualia. -->
-	<!-- Estou aqui, no mais está funcionando mas preciso aprimorar e verificar a questão do seelct. vou pra o criar agora. -->
 	<section class="user-edit user-form container">
 		<router-link class="btn btn-back" to="/"> Voltar </router-link>
 		<h1>Editar Usuário</h1>
