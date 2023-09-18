@@ -1,8 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import CreateUserView from "../views/CreateUserView.vue";
-import UserView from "../views/UserView.vue";
+import UserCreateView from "../views/UserCreateView.vue";
+import UserDetailView from "../views/UserDetailView.vue";
+import UserEditView from "../views/UserEditView.vue";
 
 Vue.use(VueRouter);
 
@@ -13,15 +14,21 @@ const routes = [
 		component: HomeView,
 	},
 	{
-		path: "/usuario/:id",
-		name: "user",
-		component: UserView,
+		path: "/detalhar-usuario/:id",
+		name: "user-detail",
+		component: UserDetailView,
+		props: true,
+	},
+	{
+		path: "/editar-usuario/:id",
+		name: "user-edit",
+		component: UserEditView,
 		props: true,
 	},
 	{
 		path: "/registrar-usuario",
-		name: "registrar-usuario",
-		component: CreateUserView,
+		name: "user-register",
+		component: UserCreateView,
 	},
 ];
 

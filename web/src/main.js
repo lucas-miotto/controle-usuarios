@@ -4,12 +4,14 @@ import router from "./router";
 import store from "./store";
 import moment from "moment";
 import PageLoading from "@/components/PageLoading.vue";
+import ErroNotificacao from "@/components/ErroNotificacao.vue";
 
 moment.locale("pt-br");
 
 Vue.config.productionTip = false;
 
 Vue.component("PageLoading", PageLoading);
+Vue.component("ErroNotificacao", ErroNotificacao);
 
 Vue.filter("formatCPF", (cpf) => {
 	if (cpf) {

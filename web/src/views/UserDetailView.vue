@@ -65,7 +65,7 @@
 import { api } from "@/services.js";
 
 export default {
-	name: "UserView",
+	name: "UserDetailView",
 	props: ["id"],
 	data() {
 		return {

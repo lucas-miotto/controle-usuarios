@@ -271,6 +271,7 @@ select:focus {
 }
 .table-content li:last-child {
 	display: flex;
+	overflow: visible;
 }
 
 .btn-small {

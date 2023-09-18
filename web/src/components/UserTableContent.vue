@@ -15,12 +15,17 @@
 					<li>{{ user.profile_id.role }}</li>
 					<li>
 						<router-link
-							:to="{ name: 'user', params: { id: user.id } }"
+							:to="{ name: 'user-detail', params: { id: user.id } }"
 							class="btn btn-small btn-edit"
 						>
 							Detalhar
 						</router-link>
-						<button class="btn btn-small btn-view">Editar</button>
+						<router-link
+							:to="{ name: 'user-edit', params: { id: user.id } }"
+							class="btn btn-small btn-view"
+						>
+							Editar
+						</router-link>
 						<button
 							class="btn btn-small btn-delete"
 							@click="deleteUser(user.id)"
@@ -62,9 +67,14 @@ export default {
 	methods: {
 		getUsers() {
 			this.users = null;
-			api.get(this.url).then((response) => {
-				this.users = response.data.users;
-			});
+			api
+				.get(this.url)
+				.then((response) => {
+					this.users = response.data.users;
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 		},
 
 		deleteUser(id) {
