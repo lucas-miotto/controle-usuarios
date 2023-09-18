@@ -1,6 +1,6 @@
-# Projeto Controle Usuários
+# Server: Projeto Controle Usuários
 
-Projeto criado utilizando o laravel como uma REST API. Onde é possível criar, editar e detelar usuários através de requisições HTTP.
+Server: Projeto criado utilizando o laravel como uma REST API. Criando um aplicativo capaz de cadastrar, editar, deletar e buscar usuários através de requisições HTTP.
 
 ## 🛠️ Tecnologias
 
@@ -9,16 +9,6 @@ Projeto criado utilizando o laravel como uma REST API. Onde é possível criar, 
 ## Project setup
 
 Aqui está um passo a passo para ter o projeto funcionando em sua máquina.
-
-Acesse a pasta do servidor
-
-```
-cd controle-usuarios
-```
-
-```
-cd server
-```
 
 Atualize e instale dependências na pasta do projeto.
 

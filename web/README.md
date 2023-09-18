@@ -1,14 +1,16 @@
-# Projeto Controle Usuários
+# Web: Projeto Controle Usuários
 
-Projeto final desenvolvido em Vue.js 2 que utiliza uma REST API real feita em Laravel: [server](https://github.com/lucas-miotto/controle-usuarios), criando um aplicativo capaz de cadastrar, editar e deletar usuários e endereços.
+Web: Projeto final desenvolvido em Vue.js 2 que utiliza uma REST API real feita em Laravel(server), criando um aplicativo capaz de cadastrar, editar e deletar e buscar usuários.
 
 ## 🛠️ Tecnologias
 
 - Vue.js 2
-- Vue Router e Vuex
+- Vue Router
 - Axios
 
-## Project setup
+### Configurando o projeto web
+
+Atualize e instale dependências na pasta do projeto.
 
 ```
 npm install
@@ -32,6 +34,6 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
+#### Adicionando a baseURL do server no axios.
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Caso o servidor esteja rodando em uma url difernete de "http://127.0.0.1:8000", será necessário atualizar a variavel baseURL no arquivo web/src services.js.

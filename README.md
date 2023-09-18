@@ -1,8 +1,8 @@
 # Projeto Controle Usuários
 
-Server: Projeto criado utilizando o laravel como uma REST API. Onde é possível criação de usuários criando um aplicativo capaz de cadastrar, editar e deletar usuários e mais através de requisições HTTP.
+Server: Projeto criado utilizando o laravel como uma REST API. Criando um aplicativo capaz de cadastrar, editar, deletar e buscar usuários através de requisições HTTP.
 
-Web: Projeto final desenvolvido em Vue.js 2 que utiliza uma REST API real feita em Laravel, criando um aplicativo capaz de cadastrar, editar e deletar usuários e endereços.
+Web: Projeto final desenvolvido em Vue.js 2 que utiliza uma REST API real feita em Laravel, criando um aplicativo capaz de cadastrar, editar e deletar e buscar usuários.
 
 ## 🛠️ Tecnologias
 
@@ -86,6 +86,8 @@ cd controle-usuarios
 ```
 cd web
 ```
+
+Atualize e instale dependências na pasta do projeto.
 
 ```
 npm install
